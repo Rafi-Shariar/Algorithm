@@ -1,0 +1,47 @@
+1.
+
+int a = 0, b = 0;
+int matrix[N][M];  // t.c = O(1) ---- s.c = 0(N*M) 
+
+for (i = 0; i < N; i++) { // t.c = O(N)
+    a = a + i;
+    matrix[i][i] = a;
+}
+for (j = 0; j < M; j++) {  //--- t.c = O(M)
+    b = b + 2 * j;
+}
+
+//total time complexity = O(N+M)
+//total Space complexity = O(N*M);
+
+
+
+
+2 .
+
+
+int a = 0;  -----------------t.c = O(1) / s.c=O(1) 
+for (i = 0; i < N; i++) {--------t.c = O(N)
+    for (j = N; j > i; j--) { -------t.c = O(N*N)
+        a = a + i + j;
+    }
+}
+
+total time complexity = O(N^2);
+total space complexity = O(1);
+
+
+
+3.
+
+int a = 0, i = N; ----- t.c = O(1) / s.c = O(1)
+vector<int> vec; ------ t.c = O(1)  / s.c = O(1)
+while (i > 0) {------- t.c = O(logn)
+    a += i;
+    i /= 2;
+    vec.push_back(a); ------ t.c = O(1) / s.c = O(logn)
+}
+
+
+total time complexity = O (logn)
+total space complexity = O (logn)
